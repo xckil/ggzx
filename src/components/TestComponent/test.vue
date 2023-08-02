@@ -1,12 +1,12 @@
 <template>
-    <div>
-        <h1> 测试全局注册组件</h1>
-    </div>
+  <div>
+    <h1>测试全局注册组件</h1>
+  </div>
 </template>
 
 <script setup lang="ts">
 defineProps({
-  pro1:{
+  pro1: {
     type: String,
     default: '第一个属性',
   },
@@ -17,9 +17,8 @@ defineProps({
   pro3: {
     type: String,
     default: '第三个属性',
-  }
+  },
 })
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>

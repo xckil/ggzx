@@ -23,7 +23,7 @@
     /* 配置映射路径*/
     "baseUrl": "./",
     "paths": {
-      "@/*":["src/*"]
+      "@/*": ["src/*"]
     },
 
     "types": ["element-plus/global"]
