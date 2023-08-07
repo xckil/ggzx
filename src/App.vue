@@ -1,7 +1,8 @@
 <template>
-  <h1>测试对象home</h1>
+  <!-- <h1>测试对象home</h1>
   <TestVue></TestVue>
-  <SvgIcon></SvgIcon>
+  <SvgIcon></SvgIcon> -->
+  <router-view></router-view>
 </template>
 
 <script setup lang="ts"></script>
