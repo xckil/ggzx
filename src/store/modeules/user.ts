@@ -10,9 +10,9 @@ const userStore = defineStore('User', {
     }
   },
   actions: {
-    async userlogin(data: loginForm) {
-      const result: any = await reqLogin(data)
-    },
+    // async userlogin(data: loginForm) {
+    //   const result: any = await reqLogin(data)
+    // },
   },
   getters: {},
 })
