@@ -46,9 +46,7 @@ const loading = ref(false)
 
 const login = async () => {
   loading.value = true
-  
 }
-
 </script>
 
 <style scoped>
