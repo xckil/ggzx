@@ -40,12 +40,43 @@
 <script setup lang="ts">
 import { reactive, ref } from 'vue'
 import { User, Lock } from '@element-plus/icons-vue'
+import useUserStore from '@/store/modeules/user'
+import { useRouter, useRoute } from 'vue-router'
+import { ElNotification } from 'element-plus'
+import { getTime } from '@/utils/time'
+
 let loginForm = reactive({ username: 'admin', password: '123456' })
 
 const loading = ref(false)
+const userStore = useUserStore()
+const $route = useRoute()
+const $router = useRouter()
 
 const login = async () => {
   loading.value = true
+
+  /**
+   * 登录流程  按钮事件 -> store 发起请求 -> 请求成功 -> 路由跳转
+   */
+  try {
+    await userStore.userLogin(loginForm)
+    let redirect: string = $route.query.redirect as string
+    $router.push({ path: redirect || '/' })
+    $router.push('/')
+    ElNotification({
+      type: 'success',
+      message: '登录成功',
+      title: `Hi,现在是 ${getTime}`,
+    })
+    //还原按钮状态
+    loading.value = false
+  } catch (error) {
+    loading.value = false
+    ElNotification({
+      type: 'error',
+      message: (error as Error).message,
+    })
+  }
 }
 </script>
 

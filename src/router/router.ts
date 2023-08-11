@@ -1,4 +1,4 @@
-export const constantRoute = [
+export const routes = [
   {
     //登录路由
     path: '/login',
