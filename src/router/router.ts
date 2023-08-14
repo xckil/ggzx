@@ -18,6 +18,12 @@ export const routes = [
     name: '404',
   },
   {
+    //ToDoMVC 页面
+    path: '/todo',
+    component: () => import('@/view/todo/tolist.vue'),
+    name: 'tmc',
+  },
+  {
     //重定向
     path: '/:pathMatch(.*)*',
     redirect: '/404',
